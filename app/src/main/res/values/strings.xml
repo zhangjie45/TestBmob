@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">RCGL</string>
+    <string name="label_cancel">Cancel</string>
+    <string name="label_ok">OK</string>
+    <string name="permission_title_rationale">许可需要</string>
+    <string name="permission_read_storage_rationale">存储读取权限需要选择文件</string>
+    <string name="permission_write_storage_rationale">保存写入权限需要保存图像。</string>
+
+    <string name="toast_cannot_retrieve_selected_image">无法检索选定的图像</string>
+    <string name="toast_cannot_retrieve_cropped_image">无法检索裁剪图像</string>
+    <string name="toast_unexpected_error">意外的错误</string>
+</resources>

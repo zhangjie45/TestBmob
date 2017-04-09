@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#323552</color>
+    <color name="colorPrimaryDark">#323552</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="colorBackground">#323542</color>
+    <color name="colorEvent">#202020</color>
+    <color name="colorText">#FFFFFF</color>
+    <color name="half_black">#9e9e9e</color>
+    <color name="white">#fafafa</color>
+    <color name="white_pressed">#f1f1f1</color>
+</resources>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/loginbg"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/relativeLayout"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="1dp">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:layout_toStartOf="@+id/et_userEmail"
+            android:background="@drawable/user_name" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_userEmail"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="50dp"
+            android:hint="name"
+            app:met_baseColor="#858585"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="用户名"
+            app:met_primaryColor="#858585" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_new_user"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="230dp">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerVertical="true"
+            android:layout_marginEnd="12dp"
+            android:layout_toStartOf="@+id/et_userPasswd"
+            android:background="@drawable/passwd" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/et_userPasswd"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginEnd="48dp"
+            android:hint="password"
+            android:inputType="textPassword"
+            app:met_baseColor="#858585"
+            app:met_floatingLabel="highlight"
+            app:met_floatingLabelText="密码"
+            app:met_maxCharacters="10"
+            app:met_primaryColor="#858585" />
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/relativeLayout"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/shape"
+        android:text="Sign in"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btn_login"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="17dp"
+        android:text="Forgot password?"
+        android:textColor="#a2a2a2" />
+
+    <Button
+        android:id="@+id/btn_new_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="#ffffff"
+        android:text="New here?sign up"
+        android:textColor="#858585" />
+
+    <!--<ProgressBar-->
+        <!--android:id="@+id/progressBar"-->
+        <!--style="?android:attr/progressBarStyle"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_below="@+id/relativeLayout2"-->
+        <!--android:layout_centerHorizontal="true"-->
+        <!--android:visibility="gone" />-->
+
+
+</RelativeLayout>

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/charge_userName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        app:met_baseColor="#858585"
+        app:met_floatingLabelText="请输入新的用户名" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/charge_userEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/charge_userName"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        app:met_baseColor="#858585"
+        app:met_floatingLabelText="请输入新的邮箱" />
+
+    <com.rengwuxian.materialedittext.MaterialEditText
+        android:id="@+id/charge_userPhNum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/charge_userEmail"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="16dp"
+        app:met_baseColor="#858585"
+        app:met_floatingLabelText="请输入手机号" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/charge_userPhNum"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btn_charge_ok"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="确定" />
+
+        <Button
+            android:id="@+id/btn_charge_cancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:layout_weight="1"
+            android:text="关闭" />
+    </LinearLayout>
+</RelativeLayout>
