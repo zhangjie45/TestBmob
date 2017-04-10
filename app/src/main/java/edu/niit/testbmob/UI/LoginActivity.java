@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import cn.bmob.v3.Bmob;
@@ -21,6 +22,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
     private Button btn_login;
     private EditText et_userEmail;
     private EditText et_userPassWd;
+    private TextView tv_forgot;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,7 +32,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         initView();
         btn_new_user.setOnClickListener(this);
         btn_login.setOnClickListener(this);
-
+        tv_forgot.setOnClickListener(this);
 
     }
 
@@ -72,6 +74,7 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
         btn_login = (Button) findViewById(R.id.btn_login);
         et_userEmail = (EditText) findViewById(R.id.et_userEmail);
         et_userPassWd = (EditText) findViewById(R.id.et_userPasswd);
+        tv_forgot = (TextView) findViewById(R.id.tv_forgot);
     }
 
     @Override
@@ -103,8 +106,10 @@ public class LoginActivity extends BaseActivity implements View.OnClickListener 
                     }
                 });
                 break;
-
-
+            case R.id.tv_forgot:
+                Intent intent = new Intent(LoginActivity.this, SendEmailActivity.class);
+                startActivity(intent);
+                break;
         }
     }
 }
