@@ -12,8 +12,11 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.KeyEvent;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -46,6 +49,7 @@ public class MajorActivity extends BaseActivity implements View.OnClickListener 
     private TextView toolbar_title;
     private RecyclerView show_event;
     private ImageView no_event;
+    private Toolbar toolbar;
 
     EventAdapter adapter;
     SwipeRefreshLayout swipe_refresh;
@@ -76,6 +80,7 @@ public class MajorActivity extends BaseActivity implements View.OnClickListener 
     }
 
     private void initView() {
+        toolbar = (Toolbar) findViewById(R.id.major_toolbar);
         multiple_actions_down = (FloatingActionsMenu) findViewById(R.id.multiple_actions_down);
         floatingActionButton_add = (FloatingActionButton) findViewById(R.id.button_add);
         floatingActionButton_about = (FloatingActionButton) findViewById(R.id.button_about);
@@ -121,6 +126,7 @@ public class MajorActivity extends BaseActivity implements View.OnClickListener 
      */
     private void onScrollDown() {
         //下滑时要执行的代码
+        multiple_actions_down.collapse();
         multiple_actions_down.setVisibility(View.VISIBLE);
     }
 
@@ -134,6 +140,28 @@ public class MajorActivity extends BaseActivity implements View.OnClickListener 
 
     private void toolbarShow() {
         toolbar_title.setText("欢迎使用");
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.log_out:
+                        BmobUser.logOut();   //清除缓存用户对象
+                        SharedPreferences preferences1 = getSharedPreferences("userInfo", Context.MODE_PRIVATE);
+                        SharedPreferences.Editor editor1 = preferences1.edit();
+                        editor1.remove("userName");
+                        editor1.remove("passWord");
+                        editor1.commit();
+                        Intent i = new Intent(MajorActivity.this, LoginActivity.class);
+                        startActivity(i);
+                        overridePendingTransition(R.anim.in_from_right, R.anim.out_to_left);
+                        finish();
+                        //  BmobUser currentUser = BmobUser.getCurrentUser(); // 现在的currentUser是null了
+                }
+                return false;
+            }
+        });
     }
 
     @Override
@@ -250,5 +278,11 @@ public class MajorActivity extends BaseActivity implements View.OnClickListener 
                 });
         builder.create().show();
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.logout_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 }

@@ -85,7 +85,6 @@ public class ChargeEventActivity extends BaseActivity implements View.OnClickLis
         getMenuInflater().inflate(R.menu.toolbar_menu_charge, menu);
         return super.onCreateOptionsMenu(menu);
     }
-
     private Toolbar.OnMenuItemClickListener onMenuItemClick = new Toolbar.OnMenuItemClickListener() {
         @Override
         public boolean onMenuItemClick(MenuItem item) {
@@ -111,7 +110,6 @@ public class ChargeEventActivity extends BaseActivity implements View.OnClickLis
             return true;
         }
     };
-
     public void getData() {
         Intent intent = this.getIntent();
         objectId = intent.getStringExtra("objectId");
