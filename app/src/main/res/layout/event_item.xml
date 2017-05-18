@@ -5,11 +5,10 @@
     android:layout_height="80dp"
     android:layout_margin="5dp"
     android:orientation="vertical"
-    app:cardBackgroundColor="#757575"
+    app:cardBackgroundColor="#fff"
     app:cardCornerRadius="5dp"
     app:cardElevation="5dp"
     app:elevation="1dp">
-    <!--android:foreground="?android:attr/selectableItemBackground"-->
 
 
     <RelativeLayout
@@ -24,7 +23,7 @@
             android:ellipsize="end"
             android:maxLines="1"
             android:text="测试标题 "
-            android:textColor="@color/white" />
+            android:textColor="@color/half_black" />
 
         <TextView
             android:id="@+id/tv_event_time"
@@ -33,7 +32,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true"
             android:text="2016年5月15号"
-            android:textColor="@color/white" />
+            android:textColor="@color/half_black" />
 
         <TextView
             android:id="@+id/tv_event_address"
@@ -42,7 +41,7 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentLeft="true"
             android:text="测试地点"
-            android:textColor="@color/white" />
+            android:textColor="@color/half_black" />
 
 
     </RelativeLayout>
