@@ -34,9 +34,6 @@ import edu.niit.testbmob.Utils.ConfirmDialog;
 import edu.niit.testbmob.Utils.ImageTools;
 
 
-/**
- * Created by 11094 on 2017/3/23.
- */
 
 public class PersonalCenterActivity extends BaseActivity implements View.OnClickListener {
     private TextView userName;

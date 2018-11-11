@@ -8,15 +8,14 @@
     <android.support.v7.widget.Toolbar
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        android:background="?colorAccent"
+        android:layout_height="wrap_content"
         app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:title="裁剪"
         app:titleTextColor="@android:color/white" />
 
-    <com.yalantis.ucrop.view.UCropView
-        android:id="@+id/ucrop"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+    <!--<com.yalantis.ucrop.view.UCropView-->
+    <!--android:id="@+id/ucrop"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent" />-->
 
 </LinearLayout>

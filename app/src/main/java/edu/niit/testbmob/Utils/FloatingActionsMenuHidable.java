@@ -6,9 +6,7 @@ import android.view.ViewGroup;
 
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
-/**
- * Created by 11094 on 2017/3/30.
- */
+
 
 public class FloatingActionsMenuHidable extends FloatingActionsMenu {
     private boolean isShown = true;

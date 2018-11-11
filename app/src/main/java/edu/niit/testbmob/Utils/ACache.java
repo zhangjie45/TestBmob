@@ -1,8 +1,5 @@
 package edu.niit.testbmob.Utils;
 
-/**
- * Created by 11094 on 2017/3/28.
- */
 
 import android.content.Context;
 import android.graphics.Bitmap;

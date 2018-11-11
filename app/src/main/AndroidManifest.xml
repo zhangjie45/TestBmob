@@ -40,6 +40,8 @@
         <activity android:name=".UI.DetailActivity" />
 
         <activity android:name=".UI.SendEmailActivity" />
+
+        <activity android:name=".UI.AlarmActivity"/>
     </application>
 
 </manifest>

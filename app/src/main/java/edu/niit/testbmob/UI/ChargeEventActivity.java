@@ -27,9 +27,6 @@ import edu.niit.testbmob.R;
 import edu.niit.testbmob.Utils.BaseActivity;
 import edu.niit.testbmob.Utils.Event;
 
-/**
- * Created by 11094 on 2017/3/28.
- */
 
 public class ChargeEventActivity extends BaseActivity implements View.OnClickListener {
     private MaterialEditText charge_event_title;

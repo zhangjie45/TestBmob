@@ -27,9 +27,6 @@ import edu.niit.testbmob.R;
 import edu.niit.testbmob.Utils.BaseActivity;
 import edu.niit.testbmob.Utils.Event;
 
-/**
- * Created by 11094 on 2017/3/25.
- */
 
 public class AddEventActivity extends BaseActivity implements View.OnClickListener {
     private Toolbar toolbar;

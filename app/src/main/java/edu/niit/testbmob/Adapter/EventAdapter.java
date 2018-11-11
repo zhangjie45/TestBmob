@@ -12,9 +12,7 @@ import java.util.List;
 import edu.niit.testbmob.R;
 import edu.niit.testbmob.Utils.Event;
 
-/**
- * Created by 11094 on 2017/3/27.
- */
+
 
 public class EventAdapter extends RecyclerView.Adapter implements View.OnClickListener{
 

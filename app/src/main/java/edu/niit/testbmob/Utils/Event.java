@@ -2,9 +2,6 @@ package edu.niit.testbmob.Utils;
 
 import cn.bmob.v3.BmobObject;
 
-/**
- * Created by 11094 on 2017/3/25.
- */
 
 public class Event extends BmobObject {
     private String Title;

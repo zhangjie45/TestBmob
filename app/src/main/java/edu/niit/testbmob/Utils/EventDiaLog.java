@@ -14,9 +14,6 @@ import cn.bmob.v3.listener.UpdateListener;
 import edu.niit.testbmob.R;
 import edu.niit.testbmob.UI.ChargeEventActivity;
 
-/**
- * Created by 11094 on 2017/3/27.
- */
 
 public class EventDiaLog extends Dialog {
     private Context context;

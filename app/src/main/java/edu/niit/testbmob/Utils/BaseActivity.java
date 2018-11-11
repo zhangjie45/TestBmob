@@ -12,9 +12,7 @@ import android.widget.Toast;
 
 import edu.niit.testbmob.R;
 
-/**
- * Created by 11094 on 2017/3/21.
- */
+
 
 public class BaseActivity extends AppCompatActivity {
     @Override

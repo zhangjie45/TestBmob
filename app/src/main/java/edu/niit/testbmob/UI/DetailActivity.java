@@ -11,9 +11,6 @@ import edu.niit.testbmob.R;
 import edu.niit.testbmob.Utils.BaseActivity;
 import edu.niit.testbmob.Utils.Event;
 
-/**
- * Created by 11094 on 2017/3/28.
- */
 
 public class DetailActivity extends BaseActivity {
     private Toolbar detailToolbar;
@@ -36,7 +33,7 @@ public class DetailActivity extends BaseActivity {
 
     private void showDetail() {
         detailTitle.setText(title);
-        detailAddress.setText("地址" + address);
+        detailAddress.setText("地址:" + address);
         detailContext.setText("内容：" + context);
         detailTime.setText(time);
     }

@@ -15,9 +15,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 import edu.niit.testbmob.R;
 
-/**
- * Created by 11094 on 2017/4/10.
- */
+
 
 public class SendEmailActivity extends AppCompatActivity implements View.OnClickListener {
     private MaterialEditText et_email;

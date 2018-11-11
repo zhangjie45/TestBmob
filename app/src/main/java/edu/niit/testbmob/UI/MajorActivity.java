@@ -1,5 +1,9 @@
 package edu.niit.testbmob.UI;
 
+import android.app.AlarmManager;
+import android.app.PendingIntent;
+import android.app.Service;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -20,10 +24,13 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
+import java.util.Calendar;
 import java.util.List;
 
 import cn.bmob.v3.BmobQuery;
@@ -36,21 +43,20 @@ import edu.niit.testbmob.Utils.BaseActivity;
 import edu.niit.testbmob.Utils.Event;
 import edu.niit.testbmob.Utils.EventDiaLog;
 
-/**
- * Created by 11094 on 2017/3/23.
- */
+
 
 public class MajorActivity extends BaseActivity implements View.OnClickListener {
     private FloatingActionButton floatingActionButton_add;
     private FloatingActionButton floatingActionButton_about;
     private FloatingActionButton floatingActionButton_me;
+    private FloatingActionButton floatingActionButton_clock;
     private FloatingActionsMenu multiple_actions_down;
     private CoordinatorLayout coordinator_layout;
     private TextView toolbar_title;
     private RecyclerView show_event;
     private ImageView no_event;
     private Toolbar toolbar;
-
+    AlarmManager aManager;
     EventAdapter adapter;
     SwipeRefreshLayout swipe_refresh;
     BmobUser user = BmobUser.getCurrentUser();
@@ -85,6 +91,7 @@ public class MajorActivity extends BaseActivity implements View.OnClickListener 
         floatingActionButton_add = (FloatingActionButton) findViewById(R.id.button_add);
         floatingActionButton_about = (FloatingActionButton) findViewById(R.id.button_about);
         floatingActionButton_me = (FloatingActionButton) findViewById(R.id.button_me);
+        floatingActionButton_clock = (FloatingActionButton) findViewById(R.id.button_clock);
         coordinator_layout = (CoordinatorLayout) findViewById(R.id.coordinator_layout);
         show_event = (RecyclerView) findViewById(R.id.show_event);
         toolbar_title = (TextView) findViewById(R.id.toolbar_title);
@@ -92,6 +99,8 @@ public class MajorActivity extends BaseActivity implements View.OnClickListener 
         floatingActionButton_add.setOnClickListener(this);
         floatingActionButton_about.setOnClickListener(this);
         floatingActionButton_me.setOnClickListener(this);
+        floatingActionButton_clock.setOnClickListener(this);
+        aManager = (AlarmManager) getSystemService(Service.ALARM_SERVICE);
         swipe_refresh = (SwipeRefreshLayout) findViewById(R.id.swipe_refresh);
         swipe_refresh.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -175,13 +184,31 @@ public class MajorActivity extends BaseActivity implements View.OnClickListener 
                 startActivity(i);
                 break;
             case R.id.button_add:
-                Intent intent = new Intent(MajorActivity.this, AddEventActivity.class);
-                startActivity(intent);
+                Intent intent_add = new Intent(MajorActivity.this, AddEventActivity.class);
+                startActivity(intent_add);
                 break;
+            case R.id.button_clock:
+                java.util.Calendar currentTime = java.util.Calendar.getInstance();
+                new TimePickerDialog(MajorActivity.this, 0, new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker tp, int hourOfDay, int minute) {
+                        Intent intent = new Intent(MajorActivity.this, AlarmActivity.class);
+                        PendingIntent pi = PendingIntent.getActivity(MajorActivity.this, 0, intent, 0);
+                        java.util.Calendar c = java.util.Calendar.getInstance();
+                        c.setTimeInMillis(System.currentTimeMillis());
+                        c.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                        c.set(java.util.Calendar.MINUTE, minute);
+                        c.set(java.util.Calendar.SECOND, 0); // 设置闹钟的秒数
+                        c.set(java.util.Calendar.MILLISECOND, 0); // 设置闹钟的毫秒数
+                        aManager.set(AlarmManager.RTC_WAKEUP, c.getTimeInMillis(), pi);
+                        Toast.makeText(MajorActivity.this, "设置闹钟成功", Toast.LENGTH_SHORT).show();
+                    }
+                }, currentTime.get(java.util.Calendar.HOUR_OF_DAY), currentTime.get(java.util.Calendar.MINUTE), false).show();
 
+                break;
         }
-
     }
+
 
     public void getEvent() {
         BmobQuery<Event> query = new BmobQuery<Event>();

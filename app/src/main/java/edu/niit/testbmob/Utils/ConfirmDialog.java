@@ -13,9 +13,7 @@ import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.UpdateListener;
 import edu.niit.testbmob.R;
 
-/**
- * Created by 11094 on 2017/3/24.
- */
+
 
 public class ConfirmDialog extends android.app.Dialog {
     private Context context;
